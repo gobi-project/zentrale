@@ -1,0 +1,19 @@
+influxdb:
+  production:
+    db_name: gobi
+    db_user: gobi
+    db_pw: E9rCFPkBjAKyuXTxXm63
+    host: 192.168.234.22
+    port: 8086
+  development:
+    db_name: gobi
+    db_user: gobi
+    db_pw: E9rCFPkBjAKyuXTxXm63
+    host: gitlab.gobi.tzi.de
+    port: 8086
+  test:
+    db_name: gobi
+    db_user: gobi
+    db_pw: E9rCFPkBjAKyuXTxXm63
+    host: gitlab.gobi.tzi.de
+    port: 8086

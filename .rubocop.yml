@@ -1,0 +1,15 @@
+AllCops:
+  Excludes:
+    - log/**
+    - db/**
+    - vendor/**
+LineLength:
+  Max: 150
+ClassLength:
+  Max: 130
+MethodLength:
+  Max: 40
+CyclomaticComplexity:
+  Enabled: false
+Eval:
+  Enabled: false

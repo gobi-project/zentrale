@@ -1,0 +1,3 @@
+collection @resources
+
+extends "resource"

@@ -1,0 +1,3 @@
+collection @rules
+
+extends 'rule'

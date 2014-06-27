@@ -1,0 +1,3 @@
+collection @measurements
+
+extends "measurement"

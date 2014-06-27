@@ -1,0 +1,3 @@
+collection @groups
+
+extends "group"

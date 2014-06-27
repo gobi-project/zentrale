@@ -1,0 +1,61 @@
+namespace :resources do
+  before do
+    @resources = @group.resources unless @group.nil?
+    @resources = @device.resources unless @device.nil?
+    @resources = Resource.all if @resources.nil?
+  end
+
+  get '', rabl: 'resources.rabl' do
+    ids = @resources.map(&:id)
+    res = @resources.map(&:serializable_hash)
+    measurements = TITS.multi_current_measurements(ids)
+    res.each.map do |r|
+      measurements.each do |m|
+        if m.resource_id == r['id']
+          r['value'] = m.value
+          break
+        end
+      end
+    end
+    @resources = res.map{|r| OpenStruct.new r}
+  end
+
+  route_param :resource_id, requirements: /[0-9]+/ do
+    before do
+      @resource = @resources.find_by_id(params[:resource_id])
+      error('Resource not found', 404) if @resource.nil?
+    end
+
+    get '', rabl: 'resource.rabl' do
+      res = @resource.serializable_hash
+      res['value'] = @resource.value
+      @resource = OpenStruct.new res
+    end
+
+    params do
+      requires :from, type: Integer
+      requires :to, type: Integer
+      optional :granularity, type: Integer
+    end
+    get 'measurements', rabl: 'measurements.rabl' do
+      gran = params[:granularity] || (params[:to] - params[:from])/80
+      @measurements = @resource.measurements(start_point: Time.at(params[:from]), end_point: Time.at(params[:to]), granularity: gran)
+    end
+
+    params do
+      optional :name, type: String
+      optional :value
+    end
+    patch do
+      begin
+        if @resource.update_resource(permitted_params)
+          status(204)
+        else
+          error({ error: @resource.errors.messages }, 400)
+        end
+      rescue => e
+        status(503)
+      end
+    end
+  end
+end
