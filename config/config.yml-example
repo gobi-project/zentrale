@@ -1,0 +1,19 @@
+influxdb:
+  production:
+    db_name: gobi_prod
+    db_user: gobi
+    db_pw: password
+    host: 127.0.0.1
+    port: 8086
+  development:
+    db_name: gobi_dev
+    db_user: gobi
+    db_pw: password
+    host: 127.0.0.1
+    port: 8086
+  test:
+    db_name: gobi_test
+    db_user: gobi
+    db_pw: password
+    host: 127.0.0.1
+    port: 8086
