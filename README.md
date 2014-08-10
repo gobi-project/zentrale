@@ -2,8 +2,6 @@
 
 * coap
 * codtls
-* core_link_format_parser
-* senml_parser
 * torf
 * tits
 

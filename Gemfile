@@ -26,8 +26,8 @@ end
 gem 'coap'
 gem 'codtls'
 
-gem 'core_link_format_parser'
-gem 'senml_parser'
+gem 'core_link_format_parser', git: 'https://github.com/gobi-project/core-link-parser.git'
+gem 'senml_parser', git: 'https://github.com/gobi-project/senml-parser.git'
 
 gem 'torf'
 gem 'tits'
