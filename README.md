@@ -1,7 +1,5 @@
 # Folgende Abhängigkeiten werden derzeit nicht erfüllt:
 
-* coap
-* codtls
 * torf
 * tits
 
