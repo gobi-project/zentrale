@@ -1,54 +1,25 @@
 GIT
-  remote: git@gitlab.gobi.tzi.de:gobi/gem-coap.git
-  revision: 877f3929917a919837b9bd163101626678dc9601
-  branch: stable
-  specs:
-    coap (0.0.13)
-      resolv-ipv6favor
-
-GIT
-  remote: git@gitlab.gobi.tzi.de:gobi/gem-codtls.git
-  revision: 80a609f59e65be26eba4290030e7354abd9a8806
-  branch: stable
-  specs:
-    codtls (0.0.1.alpha.6)
-      openssl-ccm (~> 1.1, >= 1.1.1)
-      openssl-cmac (~> 2.0, >= 2.0.0)
-      redis (~> 3.1.0, >= 3.1.0)
-
-GIT
-  remote: git@gitlab.gobi.tzi.de:gobi/gem-core-link-format-parser.git
-  revision: ab2744280a1255c8ec4b14d78d1a93e06c6a4a77
+  remote: https://github.com/gobi-project/core-link-parser.git
+  revision: 84320207597a0f7b3caae9172cbbc850d2c1da8f
   specs:
     core_link_format_parser (0.0.1)
 
 GIT
-  remote: git@gitlab.gobi.tzi.de:gobi/gem-senml-parser.git
-  revision: b4b3c5f84cc6ddc0e4a73091e924f645c39b8f62
+  remote: https://github.com/gobi-project/senml-parser.git
+  revision: bfed9797c16c37466e1b075c22638abd20331dd4
   specs:
     senml_parser (0.0.1)
       cbor
       json
 
 GIT
-  remote: git@gitlab.gobi.tzi.de:gobi/gem-tits.git
-  revision: 951277ffe4291891fdbecd2dfc3ee29a5e987052
-  branch: stable
+  remote: https://github.com/gobi-project/tits.git
+  revision: e017fb87a398d9a7a13f5abe49f59f0a6f96c41d
   specs:
-    tits (0.0.2.pre)
+    tits (0.0.3.pre)
       activerecord
       influxdb
-      redcarpet
       yard
-
-GIT
-  remote: git@gitlab.gobi.tzi.de:gobi/gem-torf.git
-  revision: be40b4a3a5117c7244d76cb747ee56602bd797c6
-  specs:
-    torf (0.0.3)
-      activerecord
-      acts_as_list
-      logger
 
 GEM
   remote: https://rubygems.org/
@@ -68,8 +39,6 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    acts_as_list (0.4.0)
-      activerecord (>= 3.0)
     arel (4.0.2)
     ast (2.0.0)
     axiom-types (0.1.1)
@@ -79,6 +48,14 @@ GEM
     bcrypt (3.1.7)
     builder (3.1.4)
     cbor (0.5.6.4)
+    coap (0.0.16)
+      resolv-ipv6favor
+    codtls (0.0.1.alpha.1)
+      activerecord (~> 4.0, >= 4.0.0)
+      coap
+      openssl-ccm (~> 1.1, >= 1.1.1)
+      openssl-cmac (~> 2.0, >= 2.0.0)
+      sqlite3 (~> 1.3, >= 1.3.9)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     database_cleaner (1.3.0)
@@ -110,7 +87,6 @@ GEM
     influxdb (0.1.8)
       json
     json (1.8.1)
-    logger (1.2.8)
     minitest (4.7.5)
     multi_json (1.10.1)
     multi_xml (0.5.5)
@@ -136,8 +112,6 @@ GEM
       rack-test (>= 0.5)
     rainbow (2.0.0)
     rake (10.3.2)
-    redcarpet (3.1.2)
-    redis (3.1.0)
     resolv-ipv6favor (0.0.0)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -176,8 +150,8 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 4.0.4)
   bcrypt
-  coap!
-  codtls!
+  coap
+  codtls
   core_link_format_parser!
   database_cleaner
   dnssd
@@ -195,4 +169,3 @@ DEPENDENCIES
   senml_parser!
   sqlite3
   tits!
-  torf!

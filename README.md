@@ -1,7 +1,6 @@
 # Folgende Abhängigkeiten werden derzeit nicht erfüllt:
 
 * torf
-* tits
 
 # README zur Zentrale
 
